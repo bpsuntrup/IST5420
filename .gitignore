@@ -1,0 +1,10 @@
+*.dat
+*.png
+*.gif
+*.aux
+*.dvi
+*.log
+*.pdf
+*.gnuplot
+*.gz
+w18-test-*
