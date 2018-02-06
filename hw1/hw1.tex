@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{listings}
+\usepackage{amsmath}
 \usepackage{graphicx} % for including gif
 
 % The following nonsense is coloring for code samples %%%%%%%
@@ -87,5 +88,30 @@ Below, I've plotted the size of an account after 5 years in dollars with an init
 \begin{center}
 	\includegraphics[scale=0.5]{screenshot2.png}
 \end{center}
+
+\section*{Problem 8}
+Call $f(j) \equiv P_t(j) = P_0(1+\frac{j}{m})^{mt}$. Then 
+
+\newcommand{\dv}[1]{\frac{d}{d#1}}
+
+$$\dv j ln(f(j))=\frac{1}{f(j)}\cdot f'(j)$$
+
+$$\Rightarrow \dv j f(j) = f(j)\cdot \dv{j}ln(f(j))$$
+
+So, we have that
+
+\begin{align}
+\dv j ln(f(j)) &= \dv j ln(P_0(1+\frac{j}{m})^{mt}) \\
+	&= mt \dv j [ln P_0 + ln\frac{j}{m}] \\
+	&= mt\dv j[ln\; j - ln\; m]\\
+	&= mt\dv j ln\; j\\
+	&= \frac{mt}{j}
+\end{align}
+
+Hence, $\dv j f(j) = f(j)\cdot \dv j ln\; f(j) = P_0(1+\frac{j}{m})^{mt}\cdot \frac{mt}{j}$
+
+Thus, you would expect an increase in $j$ by $\Delta j$ to
+bear about an increase of $\Delta j\cdot P_0(1+\frac{j}{m})^{mt}\cdot \frac{mt}{j}$ in $P_t$.
+
 
 \end{document}
