@@ -100,18 +100,29 @@ $$\Rightarrow \dv j f(j) = f(j)\cdot \dv{j}ln(f(j))$$
 
 So, we have that
 
-\begin{align}
+\begin{align*}
 \dv j ln(f(j)) &= \dv j ln(P_0(1+\frac{j}{m})^{mt}) \\
 	&= mt \dv j [ln P_0 + ln\frac{j}{m}] \\
 	&= mt\dv j[ln\; j - ln\; m]\\
 	&= mt\dv j ln\; j\\
 	&= \frac{mt}{j}
-\end{align}
+\end{align*}
 
 Hence, $\dv j f(j) = f(j)\cdot \dv j ln\; f(j) = P_0(1+\frac{j}{m})^{mt}\cdot \frac{mt}{j}$
 
 Thus, you would expect an increase in $j$ by $\Delta j$ to
 bear about an increase of $\Delta j\cdot P_0(1+\frac{j}{m})^{mt}\cdot \frac{mt}{j}$ in $P_t$.
+
+\section*{Problem 9}
+We have
+
+\begin{align*}
+1000e^{rt} &= 1000\cdot(1+\frac{0.015}{12})^{12t} \\
+\Rightarrow e^{rt} &= 1.00125^{12t} \\
+\Rightarrow rt &= 12t\cdot ln\; 1.00125 \\
+\Rightarrow r &= 12\cdot ln\;1.00125\approx 0.01499
+\end{align*}
+
 
 
 \end{document}
