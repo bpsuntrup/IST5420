@@ -35,7 +35,7 @@
 
 \begin{document}
 
-\title{Homework 1}
+\title{IS\&T 5420 Homework 1}
 \author{Benjamin Paul Suntrup}
 \maketitle
 	
@@ -66,23 +66,53 @@ As the frequency with which the interest compounds increases, the total value of
 \section*{Problem 4}
 
 
-\begin{lstlisting}[language=python, caption=$P_t$ at different values of $m$]
-1 #!/usr/bin/python3.5
-2 P_0 = 1000
-3 t = 5
-4 j = 0.015
-5 
-6 # iterate over values of m, and print corresponding P_t
-7 for m in range(1,100):
-8     P_t = P_0*(1+j/m)**(t*m)
-9     print("{} {}".format(m,P_t))
-\end{lstlisting}
+
 
 \begin{center}
 \includegraphics[scale=0.5]{screenshot1.png}
 \end{center}
 
-\section*{Problems 5 \& 6}
+\section*{Problems 5}
+\begin{lstlisting}[language=python, caption=$P_t$ calculator]
+#!/usr/bin/python3.5
+P_0 = 1000
+t = 5
+
+# iterate over values of m, and print corresponding P_t
+for j in [.015,.025,.05,.075,.1]:
+	for m in [2,4,6,12]:
+		P_t = P_0*(1+j/m)**(t*m)
+		print("j={}, m={} => P_t={}".format(j,m,P_t))
+\end{lstlisting}
+
+\begin{lstlisting}[caption=$P_t$ at different values of $m$ and $j$: Output]
+j=0.015, m=2 => P_t=1077.58254547074
+j=0.015, m=4 => P_t=1077.7329619111877
+j=0.015, m=6 => P_t=1077.7832720706283
+j=0.015, m=12 => P_t=1077.8336683126824
+j=0.025, m=2 => P_t=1132.2708296642568
+j=0.025, m=4 => P_t=1132.7077383929188
+j=0.025, m=6 => P_t=1132.8542176747685
+j=0.025, m=12 => P_t=1133.0011218785867
+j=0.05, m=2 => P_t=1280.0845441963565
+j=0.05, m=4 => P_t=1282.0372317085844
+j=0.05, m=6 => P_t=1282.695963499763
+j=0.05, m=12 => P_t=1283.3586785035118
+j=0.075, m=2 => P_t=1445.0439426308374
+j=0.075, m=4 => P_t=1449.9480257195419
+j=0.075, m=6 => P_t=1451.6133600071457
+j=0.075, m=12 => P_t=1453.2944082765023
+j=0.1, m=2 => P_t=1628.894626777442
+j=0.1, m=4 => P_t=1638.6164402903942
+j=0.1, m=6 => P_t=1641.9409670661782
+j=0.1, m=12 => P_t=1645.3089347785854
+
+\end{lstlisting}
+
+Discussion below, in Problem 6.
+
+\section*{Problems 6}
+
 Below, I've plotted the size of an account after 5 years in dollars with an initial
  deposit of \$1000, an annual interest of $j$ compounded $m$ times per year.
  
