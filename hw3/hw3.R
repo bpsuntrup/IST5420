@@ -70,5 +70,19 @@ summary(iris)
 # Plot 11
 ggplot(iris, aes(x=Sepal.Width, y=Petal.Width)) + geom_point(aes(color=Species))
 
-# P
+# Plot 12
+ggplot(iris, aes(x=Sepal.Width, y=Petal.Width)) + geom_point(aes(color=Species)) + facet_grid(~ Species)
+
+######## MPG #################
+summary(mpg)
+
+# Plot 13
+myMpg <- mpg
+myMpg$avg <- rowMeans(cbind(mpg$cty,mpg$hwy))
+p13 <- ggplot(myMpg, aes(x=displ, y=avg)) 
+p13 <- p13 + geom_point(aes(color=drv)) 
+p13 <- p13 + facet_grid(~ drv)+ facet_grid(drv ~ cyl)
+p13
+
+
 
